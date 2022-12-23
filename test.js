@@ -65,6 +65,35 @@ var tiger = {
 // }
 // 将window断言为any类型
 // (window as any).foo = 1;
-function asdasd() { }
-(function (e) {
-});
+function createArray(length, value) {
+    var result = [];
+    for (var i = 0; i < length; i++) {
+        result[i] = value;
+    }
+    return result;
+}
+createArray(3, 'x'); // ['x', 'x', 'x']
+// 泛型约束中使用类型参数
+function asdasd(obj, key) {
+    // Key extends keyof Type   key的类型属于Type类型的其中一个key
+    return obj[key];
+}
+var Odasd = /** @class */ (function () {
+    function Odasd() {
+    }
+    return Odasd;
+}());
+var MyClass = /** @class */ (function () {
+    function MyClass() {
+        this.x = true;
+    }
+    MyClass.prototype.check = function (s) {
+        console.log(1);
+        console.log(this[s]);
+        return this[s];
+    };
+    return MyClass;
+}());
+var myclass = new MyClass();
+console.log('myclass.x', myclass.x);
+myclass.check('x');

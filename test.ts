@@ -121,3 +121,22 @@ function asdasd<Type, Key extends keyof Type>(obj: Type, key: Key){
    // Key extends keyof Type   key的类型属于Type类型的其中一个key
    return obj[key]
 }
+
+class Odasd {
+   name!: string;
+}
+
+
+class MyClass {
+   [s: string]: boolean | ((s: string) => boolean)
+   x = true
+   check(s: string){
+      console.log(1);
+      console.log(this[s]);
+      return this[s] as boolean
+   }
+}
+const myclass = new MyClass()
+console.log('myclass.x', myclass.x);
+myclass.check('x')
+
